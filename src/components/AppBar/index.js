@@ -1,6 +1,4 @@
-import { useState } from "react";
 import styled from "styled-components";
-import SideBar from "../SideBar";
 
 const AppBar = styled.div`
   background-color: var(--app-color-secondary);
@@ -14,13 +12,4 @@ const AppBar = styled.div`
   }
 `;
 
-export default function Navbar(props) {
-  const [sideBarOpen, setSideBarOpen] = useState("");
-
-  return (
-    <>
-      <AppBar />
-      <SideBar open={sideBarOpen} />
-    </>
-  );
-}
+export default AppBar;
