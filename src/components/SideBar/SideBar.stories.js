@@ -3,6 +3,7 @@ import SideBar from "./index";
 export default {
   component: SideBar,
   title: "Components/SideBar",
+  argTypes: { onClickAway: { action: "clicked" } },
 };
 
 //👇 We create a “template” of how args map to rendering
