@@ -5,6 +5,7 @@ const StyledNavbar = styled.div`
   min-height: 50px;
   min-width: 50px;
 `;
+
 export default function Navbar(props) {
   return <StyledNavbar {...props} />;
 }

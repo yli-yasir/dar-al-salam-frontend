@@ -1,11 +1,13 @@
 import Navbar from "./components/Navbar";
-import ContentSection from "./components/ContentSection";
+import ImageSection from "./components/ImageSection";
 
 function App() {
   return (
     <div className="App">
-      {/* <Navbar/>
-      <ContentSection/> */}
+      {
+        <Navbar/>,
+        <ImageSection/>
+      }
     </div>
   );
 }
