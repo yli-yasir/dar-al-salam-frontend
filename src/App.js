@@ -1,13 +1,9 @@
-import Navbar from "./components/Navbar";
-import ContentSection from "./components/ContentSection";
+import Navbar from "./components/Nav";
+// import ContentSection from "./components/ContentSection";
 
 function App() {
-  return (
-    <div className="App">
-      {/* <Navbar/>
-      <ContentSection/> */}
-    </div>
-  );
+  return <div className="App">{/* <Navbar/>
+      <ContentSection/> */}</div>;
 }
 
 export default App;

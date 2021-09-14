@@ -8,7 +8,8 @@ const StyledAppBar = styled.div`
   left: 0;
   top: 0;
   right: 0;
-  min-height: var(--app-bar-height);
+  transition: height 1s;
+  height: ${(props) => (props.shown ? `var(--app-bar-height)` : `0px`)};
   display: flex;
   align-items: center;
   padding-left: 16px;
@@ -16,7 +17,7 @@ const StyledAppBar = styled.div`
 
 export default function AppBar(props) {
   return (
-    <StyledAppBar>
+    <StyledAppBar {...props}>
       <FontAwesomeIcon
         icon={faBars}
         size="lg"
