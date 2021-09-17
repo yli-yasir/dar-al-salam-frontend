@@ -9,6 +9,7 @@ import {
   faXRay,
 } from "@fortawesome/free-solid-svg-icons";
 import ListItem from "../ListItem";
+import Logo from "../Logo";
 
 const StyledSideBar = styled.div`
   background-color: var(--app-color-primary);
@@ -21,6 +22,12 @@ const StyledSideBar = styled.div`
   width: ${(props) => (props.open ? `var(--side-bar-width)` : `0px`)};
 `;
 
+const Header = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+`;
 export default function SideBar(props) {
   const { onClickAway, children, ...otherProps } = props;
 
@@ -30,7 +37,10 @@ export default function SideBar(props) {
 
   return (
     <StyledSideBar ref={ref} {...otherProps}>
-      <List textAlign="center">
+      <Header>
+        <Logo /> &nbsp;Dar Al-Salam
+      </Header>
+      <List textAlign="left">
         <ListItem icon={faHome}>Home</ListItem>
         <ListItem icon={faEye}>Dr. Ali</ListItem>
         <ListItem icon={faXRay}>Dr. Shamam</ListItem>

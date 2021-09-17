@@ -1,4 +1,6 @@
 import SideBar from "./index";
+import List from "../List";
+import ListItem from "../ListItem";
 
 export default {
   component: SideBar,
