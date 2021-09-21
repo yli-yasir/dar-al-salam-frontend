@@ -8,9 +8,10 @@ const StyledSideBar = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
-  transition: width 1s;
-  width: ${(props) => (props.open ? `var(--side-bar-width)` : `0px`)};
+  left: ${(props) =>
+    props.open ? "0px" : "calc( -1 * var(--side-bar-width))"};
+  transition: left 1s;
+  width: var(--side-bar-width);
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
