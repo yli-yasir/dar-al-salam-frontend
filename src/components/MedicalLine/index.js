@@ -16,8 +16,9 @@ export default function MedicalLine(props) {
       <path
         d="M156 28H144L135 55L117 1L108 28H96L0.5 28.5M251 28.0804H156"
         stroke="#1B4965"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </StyledDivider>
   );

@@ -1,12 +1,17 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
-export default function ListItem({ children, icon, ...otherProps }) {
+const StyledListItem = styled.li`
+  display: flex;
+  align-items: center;
+`;
+
+export default function ListItem(props) {
+  const { children, icon, ...otherProps } = props;
   return (
-    <li {...otherProps}>
-      <FontAwesomeIcon icon={icon} />
+    <StyledListItem {...otherProps}>
+      {icon}
       &nbsp;
       {children}
-    </li>
+    </StyledListItem>
   );
 }

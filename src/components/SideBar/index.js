@@ -1,19 +1,7 @@
 import styled from "styled-components";
 import { useClickAway } from "react-use";
 import { useRef } from "react";
-import List from "../List";
-import {
-  faEnvelope,
-  faEye,
-  faHome,
-  faPhone,
-  faXRay,
-} from "@fortawesome/free-solid-svg-icons";
-import ListItem from "../ListItem";
-import Logo from "../Logo";
-import MedicalLine from "../MedicalLine";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import PropTypes from "prop-types";
 
 const StyledSideBar = styled.div`
   background-color: var(--app-color-primary);
@@ -22,20 +10,40 @@ const StyledSideBar = styled.div`
   bottom: 0;
   left: 0;
   transition: width 1s;
-  overflow: hidden;
   width: ${(props) => (props.open ? `var(--side-bar-width)` : `0px`)};
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
 `;
 
-const Header = styled.div`
+const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 8px;
 `;
 
-const SocialMediaContainer = styled.div``;
+const ChildrenContainer = styled.div`
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  &::-webkit-scrollbar {
+    width: 1em;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #bdbdbd;
+    border: 4px solid var(--app-color-secondary);
+    border-radius: 16px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: var(--app-color-secondary);
+    border-radius: 8px;
+  }
+`;
+
 export default function SideBar(props) {
-  const { onClickAway, children, ...otherProps } = props;
+  const { onClickAway, children, header, ...otherProps } = props;
 
   const ref = useRef(null);
 
@@ -43,21 +51,14 @@ export default function SideBar(props) {
 
   return (
     <StyledSideBar ref={ref} {...otherProps}>
-      <Header>
-        <Logo /> &nbsp;Dar Al-Salam
-      </Header>
-      <List textAlign="left">
-        <ListItem icon={faHome}>Home</ListItem>
-        <ListItem icon={faEye}>Dr. Ali</ListItem>
-        <ListItem icon={faXRay}>Dr. Shamam</ListItem>
-        <ListItem icon={faPhone}>Contact Us</ListItem>
-      </List>
-      <MedicalLine width="70%" />
-      <List>
-        <ListItem icon={faFacebook} />
-        <ListItem icon={faInstagram} />
-        <ListItem icon={faEnvelope} />
-      </List>
+      <HeaderContainer>{header}</HeaderContainer>
+      <ChildrenContainer>{children}</ChildrenContainer>
     </StyledSideBar>
   );
 }
+
+SideBar.prototypes = {
+  header: PropTypes.element,
+  children: PropTypes.element,
+  onClickAway: PropTypes.func,
+};

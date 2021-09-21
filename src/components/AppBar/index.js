@@ -1,5 +1,3 @@
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
 const StyledAppBar = styled.div`
@@ -18,13 +16,13 @@ const StyledAppBar = styled.div`
 export default function AppBar(props) {
   return (
     <StyledAppBar {...props}>
-      <FontAwesomeIcon
+      {/* <FontAwesomeIcon
         icon={faBars}
         size="lg"
         color="white"
         role="button"
         onClick={props.onMenuButtonClick}
-      />
+      /> */}
     </StyledAppBar>
   );
 }
