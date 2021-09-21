@@ -1,12 +1,12 @@
-import Navbar from "./index";
+import Nav from "./index";
 
 export default {
-  component: Navbar,
-  title: "Components/Navbar",
+  component: Nav,
+  title: "Components/Nav",
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <Navbar {...args} />;
+const Template = (args) => <Nav {...args} />;
 
 //👇 Each story then reuses that template
 // Template.bind({}) creates a copy of the function
@@ -16,11 +16,4 @@ export const Primary = Template.bind({});
 //These are the props thata we will pass
 Primary.args = {
   primary: true,
-};
-
-// Create another copy
-export const Secondary = Template.bind({});
-
-Secondary.args = {
-  primary: false,
 };

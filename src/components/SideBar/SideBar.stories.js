@@ -7,7 +7,6 @@ import {
   FiPhone,
   FiInstagram,
 } from "react-icons/fi";
-import XrayIcon from "../XrayIcon";
 import List from "../List";
 import ListItem from "../ListItem";
 import Logo from "../Logo";

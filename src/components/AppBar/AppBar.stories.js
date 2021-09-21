@@ -9,3 +9,7 @@ export default {
 const Template = (args) => <AppBar {...args} />;
 
 export const Primary = Template.bind({});
+
+Primary.args = {
+  shown: true,
+};

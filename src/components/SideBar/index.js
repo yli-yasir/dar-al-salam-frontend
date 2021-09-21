@@ -30,15 +30,15 @@ const ChildrenContainer = styled.div`
   overflow-x: hidden;
   height: 100%;
   &::-webkit-scrollbar {
-    width: 1em;
+    width: 8px;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #bdbdbd;
-    border: 4px solid var(--app-color-secondary);
-    border-radius: 16px;
+    background-color: var(--app-color-secondary);
+    border: 4px solid transparent;
+    border-radius: 32px;
   }
   &::-webkit-scrollbar-track {
-    background-color: var(--app-color-secondary);
+    background-color: rgb(0, 0, 0, 0.05);
     border-radius: 8px;
   }
 `;
@@ -58,8 +58,9 @@ export default function SideBar(props) {
   );
 }
 
-SideBar.prototypes = {
+SideBar.propTypes = {
   header: PropTypes.element,
   children: PropTypes.element,
   onClickAway: PropTypes.func,
+  open: PropTypes.bool,
 };
