@@ -10,6 +10,20 @@ const globalStyle = createGlobalStyle`
     body{
         font-family:'Roboto Mono', monospace;
     }
+
+    * {
+      margin: 0; 
+      padding: 0; 
+      border: 0; 
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: 16px;
+    }
+
+    p {
+      margin: 16px;
+    }
 `;
 
 export default globalStyle;
