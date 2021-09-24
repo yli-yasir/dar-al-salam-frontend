@@ -5,15 +5,21 @@ export default {
   title: "Components/ImageSection",
 };
 
-//👇 We create a “template” of how args map to rendering
 const Template = (args) => <ImageSection {...args} />;
 
-//👇 Each story then reuses that template
-// Template.bind({}) creates a copy of the function
-// (In our case the component) and returns it
 export const component = Template.bind({});
 
-//These are the props thata we will pass
 component.args = {
-  size: "big",
+  direction: "left",
+  imgSrc:
+    "https://www.henryford.com/-/media/images/modules/news/2018/new-entrance-allegiance.jpg?h=521&la=en&w=907&hash=68C8C72B01B5761AE5C36470C134E5FA",
+  title: "A very cool title",
+  text: `Lorem ipsum cool title amet Lorem ipsum cool title amet 
+  Lorem ipsum cool title amet Lorem ipsum cool title amet 
+  Lorem ipsum cool title amet Lorem ipsum cool title amet 
+  Lorem ipsum cool title amet Lorem ipsum cool title amet 
+  Lorem ipsum cool title amet Lorem ipsum cool title amet 
+  Lorem ipsum cool title amet Lorem ipsum cool title amet 
+  Lorem ipsum cool title amet Lorem ipsum cool title amet 
+  `,
 };
