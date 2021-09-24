@@ -38,6 +38,6 @@ export const breakpoints = {
     return `(min-width: ${this[size]})`;
   },
   down(size) {
-    return `max-width: ${this[size]}`;
+    return `(max-width: ${this[size]})`;
   },
 };
