@@ -9,14 +9,20 @@ const StyledButton = styled.button`
   border: none;
   background-color: transparent;
   border-radius: 50%;
+  padding: 8px;
   ${clickable}
 `;
 
-export default function IconButton({ icon, size = 20, ...rootProps }) {
+export default function IconButton({
+  icon,
+  iconColor,
+  size = 20,
+  ...rootProps
+}) {
   const Icon = icon;
   return (
     <StyledButton {...rootProps}>
-      <Icon size={size} />
+      <Icon size={size} color={iconColor} />
     </StyledButton>
   );
 }
@@ -24,4 +30,5 @@ export default function IconButton({ icon, size = 20, ...rootProps }) {
 IconButton.propTypes = {
   size: PropTypes.number,
   icon: PropTypes.elementType,
+  iconColor: PropTypes.string,
 };

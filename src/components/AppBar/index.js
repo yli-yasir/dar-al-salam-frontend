@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FiMenu } from "react-icons/fi";
 import PropTypes from "prop-types";
+import IconButton from "../IconButton";
 
 const StyledAppBar = styled.div`
   background-color: var(--app-color-secondary);
@@ -23,7 +24,12 @@ const Title = styled.h3`
 export default function AppBar({ title, onMenuButtonClick, ...rootProps }) {
   return (
     <StyledAppBar {...rootProps}>
-      <FiMenu size={24} role="button" onClick={onMenuButtonClick} />
+      <IconButton
+        size={24}
+        onClick={onMenuButtonClick}
+        icon={FiMenu}
+        iconColor="white"
+      />
       <Title>{title}</Title>
     </StyledAppBar>
   );
