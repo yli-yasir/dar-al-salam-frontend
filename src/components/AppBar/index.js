@@ -8,7 +8,7 @@ const StyledAppBar = styled.div`
   left: 0;
   top: 0;
   right: 0;
-  height: ${(props) => (props.shown ? `var(--app-bar-height)` : `0px`)};
+  height: ${(props) => (props.shown ? `var(--app-bar-height)` : `0`)};
   display: flex;
   align-items: center;
   padding-left: 16px;
@@ -19,16 +19,18 @@ const StyledAppBar = styled.div`
 const Title = styled.h3`
   margin-left: 16px;
 `;
-export default function AppBar(props) {
+
+export default function AppBar({ title, onMenuButtonClick, ...rootProps }) {
   return (
-    <StyledAppBar {...props}>
-      <FiMenu size={24} role="button" onClick={props.onMenuButtonClick} />
-      <Title>Dar Al-Salam</Title>
+    <StyledAppBar {...rootProps}>
+      <FiMenu size={24} role="button" onClick={onMenuButtonClick} />
+      <Title>{title}</Title>
     </StyledAppBar>
   );
 }
 
 AppBar.propTypes = {
-  show: PropTypes.bool,
+  shown: PropTypes.bool,
+  title: PropTypes.string,
   onMenuButtonClick: PropTypes.func,
 };
