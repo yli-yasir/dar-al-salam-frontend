@@ -1,19 +1,19 @@
-import Nav from "./index";
+// import Nav from "./index";
 
-export default {
-  component: Nav,
-  title: "Components/Nav",
-};
+// export default {
+//   component: Nav,
+//   title: "Components/Nav",
+// };
 
-//👇 We create a “template” of how args map to rendering
-const Template = (args) => <Nav {...args} />;
+// //👇 We create a “template” of how args map to rendering
+// const Template = (args) => <Nav {...args} />;
 
-//👇 Each story then reuses that template
-// Template.bind({}) creates a copy of the function
-// (In our case the component) and returns it
-export const Primary = Template.bind({});
+// //👇 Each story then reuses that template
+// // Template.bind({}) creates a copy of the function
+// // (In our case the component) and returns it
+// export const Primary = Template.bind({});
 
-//These are the props thata we will pass
-Primary.args = {
-  primary: true,
-};
+// //These are the props thata we will pass
+// Primary.args = {
+//   primary: true,
+// };

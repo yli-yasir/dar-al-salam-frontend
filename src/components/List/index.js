@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
-
+import ListItem from "./ListItem";
 const StyledList = styled.ul`
   list-style-type: none;
   padding: 8px;
@@ -16,6 +16,6 @@ export default function List(props) {
 
 StyledList.propTypes = {
   vGap: PropTypes.number,
-  children: PropTypes.node,
+  children: PropTypes.instanceOf(ListItem),
   textAlign: PropTypes.oneOf(["left", "center", "right"]),
 };
