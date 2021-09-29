@@ -1,19 +1,15 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { clickable } from "../../globalStyle";
 
 const StyledButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
   background-color: transparent;
-  border: unset;
   border-radius: 50%;
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-  &:active {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
+  ${clickable}
 `;
 
 export default function IconButton({ icon, size = 20, ...rootProps }) {

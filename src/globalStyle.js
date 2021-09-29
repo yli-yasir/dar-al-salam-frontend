@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 
 const globalStyle = createGlobalStyle`
     :root{
@@ -27,3 +27,12 @@ export const breakpoints = {
     return `max-width: ${this[size]}`;
   },
 };
+
+export const clickable = css`
+  &:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 100%);
+  }
+  &:active {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0 100%);
+  }
+`;
