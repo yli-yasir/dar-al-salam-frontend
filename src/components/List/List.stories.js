@@ -31,9 +31,15 @@ ButtonMenu.args = {
   textAlign: "center",
   children: (
     <Fragment>
-      <ListItem icon={<FiAirplay />}>Hello</ListItem>
-      <ListItem icon={<FiAirplay />}>Welcome</ListItem>
-      <ListItem icon={<FiAirplay />}>Hey there</ListItem>
+      <ListItem button icon={<FiAirplay />}>
+        Hello
+      </ListItem>
+      <ListItem button icon={<FiAirplay />}>
+        Welcome
+      </ListItem>
+      <ListItem button icon={<FiAirplay />}>
+        Hey there
+      </ListItem>
     </Fragment>
   ),
 };
