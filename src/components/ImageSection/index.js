@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { breakpoints } from "../../globalStyle";
-import CenterContent from "../CenterContent";
 
 const flexDirection = {
   up: "column",
