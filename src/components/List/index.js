@@ -1,10 +1,13 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import ListItem from "./ListItem";
+
 const StyledList = styled.ul`
+  display: flex;
+  flex-direction: column;
   list-style-type: none;
   padding: 8px;
-  text-align: ${(props) => props.textAlign};
+  align-items: ${(props) => props.textAlign};
   & > li {
     margin-bottom: ${(props) => (props.vGap ? `${props.vGap}px` : 0)};
   }
@@ -17,5 +20,5 @@ export default function List(props) {
 StyledList.propTypes = {
   vGap: PropTypes.number,
   children: PropTypes.instanceOf(ListItem),
-  textAlign: PropTypes.oneOf(["left", "center", "right"]),
+  textAlign: PropTypes.oneOf(["start", "center", "end"]),
 };

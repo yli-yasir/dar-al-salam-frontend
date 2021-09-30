@@ -1,6 +1,7 @@
 import { FiEye, FiHeart, FiHome } from "react-icons/fi";
 import List from "../List";
 import ListItem from "../List/ListItem";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { Icon: FiHome, label: "Home", src: "#" },
