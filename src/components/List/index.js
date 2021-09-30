@@ -5,8 +5,8 @@ const StyledList = styled.ul`
   list-style-type: none;
   padding: 8px;
   text-align: ${(props) => props.textAlign};
-  & > * {
-    margin-bottom: ${(props) => `${props.vGap}px`};
+  & > li {
+    margin-bottom: ${(props) => (props.vGap ? `${props.vGap}px` : 0)};
   }
 `;
 
