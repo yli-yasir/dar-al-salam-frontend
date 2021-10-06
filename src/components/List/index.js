@@ -17,6 +17,6 @@ export default function List(props) {
 
 StyledList.propTypes = {
   vGap: PropTypes.number,
-  children: PropTypes.instanceOf(ListItem),
+  children: PropTypes.arrayOf(ListItem),
   textAlign: PropTypes.oneOf(["left", "center", "right"]),
 };

@@ -7,12 +7,7 @@ const StyledButton = styled(Button)`
   border-radius: 50%;
 `;
 
-export default function IconButton({
-  icon,
-  iconColor,
-  size = 20,
-  ...rootProps
-}) {
+export default function IconButton({ icon, iconColor, size, ...rootProps }) {
   const Icon = icon;
   return (
     <StyledButton {...rootProps}>

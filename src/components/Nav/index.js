@@ -4,8 +4,6 @@ import { breakpoints } from "../../globalStyle";
 import AppBar from "../AppBar";
 import SideBar from "../SideBar";
 import Logo from "../Logo";
-import { FiFacebook, FiMail, FiInstagram } from "react-icons/fi";
-import ListItem from "../List/ListItem";
 import MedicalLine from "../MedicalLine";
 import PageList from "./PageList";
 import SocialMediaList from "./SocialMediaList";
@@ -22,6 +20,7 @@ export default function Nav() {
   return (
     <Fragment>
       <AppBar
+        elevation={2}
         title="Dar Al-Salam"
         shown={!isWideScreen}
         onMenuButtonClick={() => setSideBarOpen(!sideBarOpen)}
@@ -29,6 +28,7 @@ export default function Nav() {
       <SideBar
         open={isWideScreen || sideBarOpen}
         onClickAway={closeSideBar}
+        elevation={2}
         header={
           <Fragment>
             <Logo /> &nbsp;<h4>Dar Al-Salam</h4>

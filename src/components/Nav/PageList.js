@@ -1,10 +1,9 @@
 import { FiEye, FiHeart, FiHome } from "react-icons/fi";
 import List from "../List";
 import ListItem from "../List/ListItem";
-import { Link } from "react-router-dom";
-
+import Button from "../Button";
 const navLinks = [
-  { Icon: FiHome, label: "Home", src: "#" },
+  { Icon: FiHome, label: "Home", src: "#hi" },
   { Icon: FiEye, label: "Dr. Ali", src: "#" },
   { Icon: FiEye, label: "Dr. Shamam", src: "#" },
   { Icon: FiHeart, label: "About", src: "#" },
@@ -13,14 +12,11 @@ const navLinks = [
 export default function PageList() {
   return (
     <List>
-      {navLinks.map(({ Icon, label }) => (
-        <ListItem
-          key={label}
-          icon={<Icon size={20} />}
-          startPadding={24}
-          button
-        >
-          {label}
+      {navLinks.map(({ Icon, label, src }) => (
+        <ListItem contentWidth="100%" key={label}>
+          <Button $fullWidth justifyContent="start" link to={src}>
+            <Icon /> {label}
+          </Button>
         </ListItem>
       ))}
     </List>

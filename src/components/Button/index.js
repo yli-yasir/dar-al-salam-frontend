@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { clickable } from "../../globalStyle";
+import { clickable, fullWidthable } from "../../globalStyle";
 import PropTypes from "prop-types";
 import useConditionalWrapper from "../../hooks/useConditionalWrapper";
 import { Link } from "react-router-dom";
 
 const StyledButton = styled.button`
   display: flex;
-  justify-content: center;
+  justify-content: ${({ justifyContent }) => justifyContent || "center"};
   align-items: center;
   border: none;
   border-radius: 8px;
@@ -15,11 +15,13 @@ const StyledButton = styled.button`
   gap: 8px;
   font-family: inherit;
   font-size: inherit;
+  ${fullWidthable};
   ${clickable}
 `;
 
 const ButtonLink = styled(Link)`
   text-decoration: none;
+  ${fullWidthable};
 `;
 
 export default function Button(props) {
@@ -28,7 +30,7 @@ export default function Button(props) {
   const [ConditionalLink, linkProps] = useConditionalWrapper({
     condition: link,
     wrapper: ButtonLink,
-    wrapperProps: { to },
+    wrapperProps: { to, $fullWidth: buttonProps.$fullWidth },
   });
 
   return (
@@ -40,4 +42,5 @@ export default function Button(props) {
 
 Button.propTypes = {
   link: PropTypes.bool,
+  justifyContent: PropTypes.oneOf(["start", "center", "end"]),
 };

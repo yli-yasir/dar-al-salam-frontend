@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useClickAway } from "react-use";
 import { useRef } from "react";
 import PropTypes from "prop-types";
+import { elevatable } from "../../globalStyle";
 
 const StyledSideBar = styled.div`
   background-color: var(--app-color-primary);
@@ -15,6 +16,7 @@ const StyledSideBar = styled.div`
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  ${elevatable}
 `;
 
 const HeaderContainer = styled.div`
@@ -60,7 +62,7 @@ export default function SideBar(props) {
 
 SideBar.propTypes = {
   header: PropTypes.element,
-  children: PropTypes.element,
+  children: PropTypes.node,
   onClickAway: PropTypes.func,
   open: PropTypes.bool,
 };

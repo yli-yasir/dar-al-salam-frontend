@@ -37,3 +37,14 @@ export const clickable = css`
     background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0 100%);
   }
 `;
+
+export const fullWidthable = css`
+  width: ${({ $fullWidth }) => ($fullWidth ? "100%" : "initial")};
+`;
+
+export const elevatable = css`
+  box-shadow: ${({ elevation }) =>
+    elevation
+      ? `${elevation}px ${elevation}px 16px 0 rgba(0,0,0,0.3) `
+      : "initial"};
+`;
