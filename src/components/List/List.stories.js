@@ -1,7 +1,9 @@
 import List from "./index";
 import ListItem from "./ListItem";
 import { Fragment } from "react";
+import Button from "../Button";
 import { FiAirplay } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export default {
   component: List,
@@ -10,9 +12,9 @@ export default {
 
 const template = (props) => <List {...props}></List>;
 
-export const primary = template.bind({});
+export const Presentational = template.bind({});
 
-primary.args = {
+Presentational.args = {
   vGap: 12,
   textAlign: "center",
   children: (
@@ -24,22 +26,22 @@ primary.args = {
   ),
 };
 
-export const ButtonMenu = template.bind({});
+export const Menu = template.bind({});
 
-ButtonMenu.args = {
+Menu.args = {
   vGap: 8,
   textAlign: "center",
   children: (
     <Fragment>
-      <ListItem button icon={<FiAirplay />}>
-        Hello
+      <ListItem>
+        <Button>Button</Button>
       </ListItem>
-      <ListItem button icon={<FiAirplay />}>
-        Welcome
+      <ListItem>
+        <Button link to="hello.com">
+          Link Button
+        </Button>
       </ListItem>
-      <ListItem button icon={<FiAirplay />}>
-        Hey there
-      </ListItem>
+      <ListItem>Presentational</ListItem>
     </Fragment>
   ),
 };

@@ -30,7 +30,6 @@ export const breakpoints = {
 
 export const clickable = css`
   cursor: pointer;
-  user-select: none;
   &:hover {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 100%);
   }

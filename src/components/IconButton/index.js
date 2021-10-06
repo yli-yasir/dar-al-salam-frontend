@@ -1,16 +1,10 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { clickable } from "../../globalStyle";
+import Button from "../Button";
 
-const StyledButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  background-color: transparent;
+const StyledButton = styled(Button)`
   border-radius: 50%;
-  padding: 8px;
-  ${clickable}
 `;
 
 export default function IconButton({

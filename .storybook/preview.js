@@ -1,3 +1,4 @@
+import { HashRouter as Router } from "react-router-dom";
 import GlobalStyle from "../src/globalStyle";
 
 export const parameters = {
@@ -14,7 +15,9 @@ export const decorators = [
   (Story) => (
     <>
       <GlobalStyle />
-      <Story />
+      <Router>
+        <Story />
+      </Router>
     </>
   ),
 ];

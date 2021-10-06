@@ -17,3 +17,12 @@ Main.args = {
   icon: FiEye,
   size: 50,
 };
+
+export const IconLink = template.bind({});
+
+IconLink.args = {
+  icon: FiEye,
+  size: 50,
+  link: true,
+  to: "hello.com",
+};
