@@ -26,6 +26,12 @@ export const breakpoints = {
   down(size) {
     return `max-width: ${this[size]}`;
   },
+  appBarShown(bool) {
+    return bool ? this.down("sm") : this.up("sm");
+  },
+  permanentSideBar(bool) {
+    return bool ? this.appBarShown(false) : this.appBarShown(true);
+  },
 };
 
 export const clickable = css`

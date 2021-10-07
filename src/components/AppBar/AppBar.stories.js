@@ -10,6 +10,6 @@ const Template = (args) => <AppBar {...args} />;
 export const Main = Template.bind({});
 
 Main.args = {
-  shown: true,
   title: "Dar Al-Salam",
+  shown: true,
 };

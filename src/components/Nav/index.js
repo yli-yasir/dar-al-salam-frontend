@@ -10,11 +10,11 @@ import SocialMediaList from "./SocialMediaList";
 
 export default function Nav() {
   const [sideBarOpen, setSideBarOpen] = useState(false);
-  const isWideScreen = useMedia(breakpoints.up("md"));
+  const isAppBarHidden = useMedia(breakpoints.appBarShown(false));
 
   // Need this function for clickAway events.
   function closeSideBar() {
-    !isWideScreen && sideBarOpen && setSideBarOpen(false);
+    !isAppBarHidden && sideBarOpen && setSideBarOpen(false);
   }
 
   return (
@@ -22,11 +22,11 @@ export default function Nav() {
       <AppBar
         elevation={2}
         title="Dar Al-Salam"
-        shown={!isWideScreen}
+        shown={!isAppBarHidden}
         onMenuButtonClick={() => setSideBarOpen(!sideBarOpen)}
       />
       <SideBar
-        open={isWideScreen || sideBarOpen}
+        open={isAppBarHidden || sideBarOpen}
         onClickAway={closeSideBar}
         elevation={2}
         header={

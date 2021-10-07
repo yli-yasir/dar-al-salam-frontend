@@ -10,13 +10,14 @@ const StyledAppBar = styled.div`
   left: 0;
   top: 0;
   right: 0;
-  height: ${(props) => (props.shown ? `var(--app-bar-height)` : `0`)};
   display: flex;
   align-items: center;
   padding-left: 16px;
   overflow: hidden;
   color: white;
-  ${elevatable};
+  transition: height 0.1s;
+  height: ${(props) => (props.shown ? `var(--app-bar-height)` : `0`)};
+  ${elevatable}
 `;
 
 const Title = styled.h3`
@@ -38,7 +39,6 @@ export default function AppBar({ title, onMenuButtonClick, ...rootProps }) {
 }
 
 AppBar.propTypes = {
-  shown: PropTypes.bool,
   title: PropTypes.string,
   onMenuButtonClick: PropTypes.func,
 };

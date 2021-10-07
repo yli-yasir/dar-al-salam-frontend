@@ -1,14 +1,15 @@
 import Nav from "./components/Nav";
 // import ContentSection from "./components/ContentSection";
 import GlobalStyle from "./globalStyle";
-import { HashRouter as Router } from "react-router-dom";
-
+import { HashRouter as Router, Route } from "react-router-dom";
+import Home from "./pages/Home";
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
       <Router>
         <Nav />
+        <Route path="/" component={Home}></Route>
       </Router>
     </div>
   );
