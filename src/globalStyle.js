@@ -24,7 +24,7 @@ export const breakpoints = {
     return `(min-width: ${this[size]})`;
   },
   down(size) {
-    return `max-width: ${this[size]}`;
+    return `(max-width: ${this[size]})`;
   },
   appBarShown(bool) {
     return bool ? this.down("sm") : this.up("sm");
