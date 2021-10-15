@@ -20,7 +20,7 @@ export default function Nav() {
   return (
     <Fragment>
       <AppBar
-        elevation={2}
+        $elevation={2}
         title="Dar Al-Salam"
         shown={!isAppBarHidden}
         onMenuButtonClick={() => setSideBarOpen(!sideBarOpen)}
@@ -28,7 +28,7 @@ export default function Nav() {
       <SideBar
         open={isAppBarHidden || sideBarOpen}
         onClickAway={closeSideBar}
-        elevation={2}
+        $elevation={2}
         header={
           <Fragment>
             <Logo /> &nbsp;<h4>Dar Al-Salam</h4>

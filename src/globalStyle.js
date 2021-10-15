@@ -49,8 +49,8 @@ export const fullWidthable = css`
 `;
 
 export const elevatable = css`
-  box-shadow: ${({ elevation }) =>
-    elevation
-      ? `${elevation}px ${elevation}px 16px 0 rgba(0,0,0,0.3) `
+  box-shadow: ${({ $elevation }) =>
+    $elevation
+      ? `${$elevation}px ${$elevation}px 16px 0 rgba(0,0,0,0.3) `
       : "initial"};
 `;

@@ -12,4 +12,5 @@ export const Main = Template.bind({});
 Main.args = {
   title: "Dar Al-Salam",
   shown: true,
+  $elevation: 4,
 };

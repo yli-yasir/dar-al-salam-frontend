@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const StyledDivider = styled.svg`
   margin: 16px auto;
@@ -23,3 +24,7 @@ export default function MedicalLine(props) {
     </StyledDivider>
   );
 }
+
+MedicalLine.propTypes = {
+  width: PropTypes.string,
+};
