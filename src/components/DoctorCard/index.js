@@ -2,41 +2,54 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import MedicalLine from "../MedicalLine";
 import { elevatable } from "../../globalStyle";
+import Menu from "../Menu";
 
 const Root = styled.div`
-  background-image: url(${(props) => props.bgImgSrc || ""});
+  background-image: url(${(props) => props.profilePicture || ""});
   display: inline-block;
   padding: 8px;
-  color: ${(props) => props.textColor || "inherit"};
   border: 4px solid var(--app-color-secondary);
-  background-size: cover;
-  width: min(100%, 400px);
+  width: 250px;
   ${elevatable};
 `;
 
-const DoctorName = styled.h3`
-  display: inline-block;
+const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8px;
 `;
-export default function DoctorCard(props) {
-  const {
-    doctorName,
-    doctorDescription,
-    medicalLineColor,
-    ...rootProps
-  } = props;
+
+const ProfilePicture = styled.img`
+  display: block;
+  border-radius: 50%;
+`;
+export default function DoctorCard({
+  profilePicture,
+  doctorName,
+  menuItems,
+  ...rootProps
+}) {
   return (
     <Root {...rootProps}>
-      <DoctorName>{doctorName}</DoctorName>
-      <MedicalLine color={medicalLineColor} width="100%" />
-      <p>{doctorDescription}</p>
+      <Header>
+        <ProfilePicture
+          alt="avatar"
+          height="100px"
+          width="100px"
+          src={profilePicture}
+        />
+        <h3>{doctorName}</h3>
+      </Header>
+      <MedicalLine width="100%" />
+      <Menu menuItems={menuItems} />
     </Root>
   );
 }
 
 DoctorCard.propTypes = {
-  bgImgSrc: PropTypes.string,
+  profilePicture: PropTypes.string,
   doctorName: PropTypes.string,
-  doctorDescription: PropTypes.string,
+  menuItems: PropTypes.arrayOf(PropTypes.any),
   $elevation: PropTypes.number,
-  textColor: PropTypes.string,
 };

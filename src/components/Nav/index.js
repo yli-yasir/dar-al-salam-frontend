@@ -4,9 +4,8 @@ import { breakpoints } from "../../globalStyle";
 import AppBar from "../AppBar";
 import SideBar from "../SideBar";
 import Logo from "../Logo";
-import MedicalLine from "../MedicalLine";
-import PageList from "./PageList";
-import SocialMediaList from "./SocialMediaList";
+import Menu from "../Menu";
+import navMenuItems from "./navMenuItems";
 
 export default function Nav() {
   const [sideBarOpen, setSideBarOpen] = useState(false);
@@ -35,9 +34,7 @@ export default function Nav() {
           </Fragment>
         }
       >
-        <PageList />
-        <MedicalLine width="80%" />
-        <SocialMediaList />
+        <Menu menuItems={navMenuItems} />
       </SideBar>
     </Fragment>
   );

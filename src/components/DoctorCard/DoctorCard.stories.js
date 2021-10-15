@@ -1,5 +1,5 @@
-import { withTheme } from "styled-components";
 import DoctorCard from "./index";
+import { FiHeart, FiEye, FiHome } from "react-icons/fi";
 
 export default {
   component: DoctorCard,
@@ -10,10 +10,12 @@ export const Main = (props) => <DoctorCard {...props} />;
 
 Main.args = {
   doctorName: "Shamam Yousif",
-  doctorDescription:
-    "A a hac ipsum mauris vivamus in suspendisse est a augue vel scelerisque nam ultricies enim ",
-  bgImgSrc: "https://wallpaperaccess.com/full/1892582.jpg",
+  profilePicture: "https://wallpaperaccess.com/full/1892582.jpg",
   $elevation: 10,
-  textColor: "white",
-  medicalLineColor: "yellow",
+  menuItems: [
+    { icon: FiHome, label: "Home", src: "#hi" },
+    { icon: FiEye, label: "Dr. Ali", src: "#" },
+    { icon: FiEye, label: "Dr. Shamam", src: "#" },
+    { icon: FiHeart, label: "About", src: "#" },
+  ],
 };
