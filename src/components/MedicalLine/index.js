@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { appColorSecondary } from "../../globalStyle";
 
 const StyledDivider = styled.svg`
   margin: 16px auto;
@@ -7,6 +8,7 @@ const StyledDivider = styled.svg`
 `;
 
 export default function MedicalLine(props) {
+  console.log(appColorSecondary);
   return (
     <StyledDivider
       width={props.width}
@@ -16,7 +18,7 @@ export default function MedicalLine(props) {
     >
       <path
         d="M156 28H144L135 55L117 1L108 28H96L0.5 28.5M251 28.0804H156"
-        stroke="#1B4965"
+        stroke={props.color || appColorSecondary}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -27,4 +29,5 @@ export default function MedicalLine(props) {
 
 MedicalLine.propTypes = {
   width: PropTypes.string,
+  color: PropTypes.string,
 };

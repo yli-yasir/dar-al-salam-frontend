@@ -10,6 +10,7 @@ const Root = styled.div`
   color: ${(props) => props.textColor || "inherit"};
   border: 4px solid var(--app-color-secondary);
   background-size: cover;
+  width: min(100%, 400px);
   ${elevatable};
 `;
 
@@ -17,11 +18,16 @@ const DoctorName = styled.h3`
   display: inline-block;
 `;
 export default function DoctorCard(props) {
-  const { doctorName, doctorDescription, ...rootProps } = props;
+  const {
+    doctorName,
+    doctorDescription,
+    medicalLineColor,
+    ...rootProps
+  } = props;
   return (
     <Root {...rootProps}>
       <DoctorName>{doctorName}</DoctorName>
-      <MedicalLine width="100%" />
+      <MedicalLine color={medicalLineColor} width="100%" />
       <p>{doctorDescription}</p>
     </Root>
   );

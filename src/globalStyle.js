@@ -1,11 +1,14 @@
 import { createGlobalStyle, css } from "styled-components";
 
+export const appColorPrimary = "#CAE9FF";
+export const appColorSecondary = "#1B4965";
+
 const globalStyle = createGlobalStyle`
     :root{
         --app-bar-height: 50px;
         --side-bar-width:200px;
-        --app-color-primary: #CAE9FF;
-        --app-color-secondary: #1B4965; 
+        --app-color-primary: ${appColorPrimary};
+        --app-color-secondary:${appColorSecondary}; 
     }
     body{
         font-family:'Roboto Mono', monospace;
