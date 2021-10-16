@@ -12,9 +12,12 @@ const StyledButton = styled.button`
   border-radius: 8px;
   background-color: transparent;
   padding: 8px;
-  gap: 8px;
+  gap: 12px;
   font-family: inherit;
   font-size: inherit;
+  & > * {
+    flex-shrink: 0;
+  }
   ${fullWidthable};
   ${clickable}
 `;

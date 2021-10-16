@@ -8,10 +8,12 @@ import MenuItem from "../Menu/MenuItem";
 
 const Root = styled.div`
   background-image: url(${(props) => props.profilePicture || ""});
+  background-color: var(--app-color-primary);
   display: inline-block;
   padding: 8px;
   border: 4px solid var(--app-color-secondary);
   width: 250px;
+
   ${elevatable};
 `;
 
