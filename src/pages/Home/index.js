@@ -1,4 +1,4 @@
-import doctorCards from "./doctorCards";
+import doctorCards from "../../components/DoctorCard/doctorCardDetails";
 import Page from "../../components/Page";
 import DoctorCard from "../../components/DoctorCard";
 import styled from "styled-components";
@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <Page>
       <CardsContainer>
-        {doctorCards.map((doctorCard) => (
+        {Object.values(doctorCards).map((doctorCard) => (
           <DoctorCard $elevation={4} {...doctorCard} />
         ))}
       </CardsContainer>

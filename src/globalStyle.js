@@ -16,6 +16,9 @@ const globalStyle = createGlobalStyle`
     ul{
       margin:0;
     }
+    svg {
+      margin:8px;
+    }
 `;
 
 export default globalStyle;
