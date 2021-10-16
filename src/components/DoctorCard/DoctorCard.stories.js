@@ -9,13 +9,11 @@ export default {
 export const Main = (props) => <DoctorCard {...props} />;
 
 Main.args = {
+  profilePicture:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Chest_X-ray_2346.jpg/665px-Chest_X-ray_2346.jpg",
   doctorName: "Shamam Yousif",
-  profilePicture: "https://wallpaperaccess.com/full/1892582.jpg",
-  $elevation: 10,
-  menuItems: [
-    { icon: FiHome, label: "Home", src: "#hi" },
-    { icon: FiEye, label: "Dr. Ali", src: "#" },
-    { icon: FiEye, label: "Dr. Shamam", src: "#" },
-    { icon: FiHeart, label: "About", src: "#" },
-  ],
+  phoneNumbers: ["05338810255", "05338819244"],
+  email: "doctoremail@gmail.com",
+  facebook: "facebook.com/sadas",
+  moreInfo: "/dr-shamam",
 };

@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import MedicalLine from "../MedicalLine";
 import { elevatable } from "../../globalStyle";
 import Menu from "../Menu";
+import { FiFacebook, FiInfo, FiMail, FiPhoneCall } from "react-icons/fi";
+import MenuItem from "../Menu/MenuItem";
 
 const Root = styled.div`
   background-image: url(${(props) => props.profilePicture || ""});
@@ -27,7 +29,10 @@ const ProfilePicture = styled.img`
 export default function DoctorCard({
   profilePicture,
   doctorName,
-  menuItems,
+  phoneNumbers,
+  email,
+  facebook,
+  moreInfo,
   ...rootProps
 }) {
   return (
@@ -41,8 +46,15 @@ export default function DoctorCard({
         />
         <h3>{doctorName}</h3>
       </Header>
-      <MedicalLine width="100%" />
-      <Menu menuItems={menuItems} />
+      <MedicalLine width="50%" />
+      <Menu>
+        {phoneNumbers.map((phoneNumber) => (
+          <MenuItem key={phoneNumber} label={phoneNumber} icon={FiPhoneCall} />
+        ))}
+        <MenuItem label={email} icon={FiMail} to={email} />
+        <MenuItem label="Facebook Account" icon={FiFacebook} to={facebook} />
+        <MenuItem label="More Info" icon={FiInfo} to={moreInfo} />
+      </Menu>
     </Root>
   );
 }

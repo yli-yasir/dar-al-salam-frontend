@@ -6,6 +6,7 @@ import SideBar from "../SideBar";
 import Logo from "../Logo";
 import Menu from "../Menu";
 import navMenuItems from "./navMenuItems";
+import MenuItem from "../Menu/MenuItem";
 
 export default function Nav() {
   const [sideBarOpen, setSideBarOpen] = useState(false);
@@ -34,7 +35,11 @@ export default function Nav() {
           </Fragment>
         }
       >
-        <Menu menuItems={navMenuItems} />
+        <Menu>
+          {navMenuItems.map((item) => (
+            <MenuItem {...item} />
+          ))}
+        </Menu>
       </SideBar>
     </Fragment>
   );

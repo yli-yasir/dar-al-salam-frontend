@@ -13,6 +13,9 @@ const globalStyle = createGlobalStyle`
     body{
         font-family:'Roboto Mono', monospace;
     }
+    ul{
+      margin:0;
+    }
 `;
 
 export default globalStyle;

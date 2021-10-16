@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { appColorSecondary } from "../../globalStyle";
 
 const StyledDivider = styled.svg`
-  margin: 16px auto;
+  margin: 4px auto;
   display: block;
 `;
 
