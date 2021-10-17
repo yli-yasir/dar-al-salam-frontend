@@ -1,5 +1,5 @@
 const doctorCardDetails = {
-  shamam4: {
+  shamam: {
     profilePicture:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Chest_X-ray_2346.jpg/665px-Chest_X-ray_2346.jpg",
     doctorName: "Shamam Yousif",
@@ -8,28 +8,10 @@ const doctorCardDetails = {
     facebook: "facebook.com/sadas",
     moreInfo: "/dr-shamam",
   },
-  shmam3: {
+  ali: {
     profilePicture:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Chest_X-ray_2346.jpg/665px-Chest_X-ray_2346.jpg",
-    doctorName: "Shamam Yousif",
-    phoneNumbers: ["05338810255", "05338819244"],
-    email: "doctoremail@gmail.com",
-    facebook: "facebook.com/sadas",
-    moreInfo: "/dr-shamam",
-  },
-  shamam2: {
-    profilePicture:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Chest_X-ray_2346.jpg/665px-Chest_X-ray_2346.jpg",
-    doctorName: "Shamam Yousif",
-    phoneNumbers: ["05338810255", "05338819244"],
-    email: "doctoremail@gmail.com",
-    facebook: "facebook.com/sadas",
-    moreInfo: "/dr-shamam",
-  },
-  shamam3: {
-    profilePicture:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Chest_X-ray_2346.jpg/665px-Chest_X-ray_2346.jpg",
-    doctorName: "Shamam Yousif",
+      "https://p0.pxfuel.com/preview/657/387/784/eyes-test-ophthalmologist-ophthalmology.jpg",
+    doctorName: "Ali Yousif",
     phoneNumbers: ["05338810255", "05338819244"],
     email: "doctoremail@gmail.com",
     facebook: "facebook.com/sadas",

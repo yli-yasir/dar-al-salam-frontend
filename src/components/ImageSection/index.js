@@ -10,6 +10,9 @@ const flexDirection = {
 
 const Root = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   flex-direction: ${(props) => flexDirection[props.direction]};
   @media ${breakpoints.down("sm")} {
     flex-direction: ${(props) =>
@@ -21,26 +24,27 @@ const Root = styled.div`
 const TextContainer = styled.div`
   flex-direction: column;
   text-align: justify;
-  width: 100%;
-  color: #354387;
-  @media ${breakpoints.up("sm")} {
-    width: 50%;
-  }
+  flex-grow: 1;
+  width: 400px;
+  min-width: 300px;
 `;
 
 const Image = styled.img`
   object-fit: contain;
-  width: 100%;
-  @media ${breakpoints.up("sm")} {
-    width: 50%;
-  }
+  width: 500px;
+  height: 300px;
 `;
 
 const Title = styled.h1`
   text-align: center;
 `;
 
-export default function ContentSection({ direction, imgSrc, title, text }) {
+export default function ContentSection({
+  direction,
+  imgSrc,
+  title,
+  children: text,
+}) {
   return (
     <Root direction={direction}>
       <Image src={imgSrc} />

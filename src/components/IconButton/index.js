@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { clickable } from "../../globalStyle";
 import Button from "../Button";
 
 const StyledButton = styled(Button)`

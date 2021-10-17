@@ -8,7 +8,10 @@ const Root = styled.div`
   @media ${breakpoints.permanentSideBar(true)} {
     margin-left: var(--side-bar-width);
   }
-  padding: 8px;
+  padding: 32px;
+  & > * {
+    margin-bottom: 32px;
+  }
 `;
 export default function Page(props) {
   return <Root {...props}></Root>;
