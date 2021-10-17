@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/dar-al-salam-frontend/static/js/main.5acab524.chunk.js",
-    "main.js.map": "/dar-al-salam-frontend/static/js/main.5acab524.chunk.js.map",
+    "main.js": "/dar-al-salam-frontend/static/js/main.30cc278f.chunk.js",
+    "main.js.map": "/dar-al-salam-frontend/static/js/main.30cc278f.chunk.js.map",
     "runtime-main.js": "/dar-al-salam-frontend/static/js/runtime-main.4e5fdd2e.js",
     "runtime-main.js.map": "/dar-al-salam-frontend/static/js/runtime-main.4e5fdd2e.js.map",
     "static/js/2.02715b42.chunk.js": "/dar-al-salam-frontend/static/js/2.02715b42.chunk.js",
@@ -13,6 +13,6 @@
   "entrypoints": [
     "static/js/runtime-main.4e5fdd2e.js",
     "static/js/2.02715b42.chunk.js",
-    "static/js/main.5acab524.chunk.js"
+    "static/js/main.30cc278f.chunk.js"
   ]
 }
