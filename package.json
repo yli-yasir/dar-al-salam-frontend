@@ -1,5 +1,6 @@
 {
   "name": "dar-al-salam-frontend",
+  "homepage":"https://yli-yasir.github.io/dar-al-salam-frontend/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
