@@ -1,25 +1,46 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { useMedia } from "react-use";
 import { breakpoints } from "../../globalStyle";
 import AppBar from "../AppBar";
 import SideBar from "../SideBar";
+import Logo from "../Logo";
+import Menu from "../Menu";
+import navMenuItems from "./navMenuItems";
+import MenuItem from "../Menu/MenuItem";
 
-export default function Nav(props) {
+export default function Nav() {
   const [sideBarOpen, setSideBarOpen] = useState(false);
-  const isWideScreen = useMedia(breakpoints.up("md"));
+  const isAppBarHidden = useMedia(breakpoints.appBarShown(false));
 
   // Need this function for clickAway events.
   function closeSideBar() {
-    !isWideScreen && sideBarOpen && setSideBarOpen(false);
+    !isAppBarHidden && sideBarOpen && setSideBarOpen(false);
   }
 
   return (
-    <>
+    <Fragment>
       <AppBar
-        shown={!isWideScreen}
+        $elevation={2}
+        title="Dar Al-Salam"
+        shown={!isAppBarHidden}
         onMenuButtonClick={() => setSideBarOpen(!sideBarOpen)}
       />
-      <SideBar open={isWideScreen || sideBarOpen} onClickAway={closeSideBar} />
-    </>
+      <SideBar
+        open={isAppBarHidden || sideBarOpen}
+        onClickAway={closeSideBar}
+        $elevation={2}
+        header={
+          <Fragment>
+            <Logo /> &nbsp;<h4>Dar Al-Salam</h4>
+          </Fragment>
+        }
+      >
+        <Menu>
+          {navMenuItems.map((item) => (
+            <MenuItem {...item} />
+          ))}
+        </Menu>
+      </SideBar>
+    </Fragment>
   );
 }
