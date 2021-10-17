@@ -33,6 +33,9 @@ const Image = styled.img`
   object-fit: contain;
   width: 500px;
   height: 300px;
+  @media ${breakpoints.smallScreen(true)} {
+    width: 100%;
+  }
 `;
 
 const Title = styled.h1`
