@@ -1,16 +1,18 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
+
+export const appColorPrimary = "#CAE9FF";
+export const appColorSecondary = "#1B4965";
 
 const globalStyle = createGlobalStyle`
     :root{
         --app-bar-height: 50px;
-        --side-bar-width:100px;
-        --app-color-primary: #CAE9FF;
-        --app-color-secondary: #1B4965; 
+        --side-bar-width:200px;
+        --app-color-primary: ${appColorPrimary};
+        --app-color-secondary:${appColorSecondary}; 
     }
     body{
         font-family:'Roboto Mono', monospace;
     }
-
     * {
       margin: 0; 
       padding: 0; 
@@ -23,6 +25,11 @@ const globalStyle = createGlobalStyle`
 
     p {
       margin: 16px;
+    ul{
+      margin:0;
+    }
+    svg {
+      margin:8px;
     }
 `;
 
@@ -39,5 +46,33 @@ export const breakpoints = {
   },
   down(size) {
     return `(max-width: ${this[size]})`;
+
+  },
+  appBarShown(bool) {
+    return bool ? this.down("sm") : this.up("sm");
+  },
+  permanentSideBar(bool) {
+    return bool ? this.appBarShown(false) : this.appBarShown(true);
   },
 };
+
+export const clickable = css`
+  cursor: pointer;
+  &:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 100%);
+  }
+  &:active {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0 100%);
+  }
+`;
+
+export const fullWidthable = css`
+  width: ${({ $fullWidth }) => ($fullWidth ? "100%" : "initial")};
+`;
+
+export const elevatable = css`
+  box-shadow: ${({ $elevation }) =>
+    $elevation
+      ? `${$elevation}px ${$elevation}px 16px 0 rgba(0,0,0,0.3) `
+      : "initial"};
+`;
