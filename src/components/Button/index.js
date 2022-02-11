@@ -1,48 +1,23 @@
 import styled from "styled-components";
-import { clickable, fullWidthable } from "../../globalStyle";
-import PropTypes from "prop-types";
-import useConditionalWrapper from "../../hooks/useConditionalWrapper";
-import { Link } from "react-router-dom";
+import { sizeable, clickable, elevatable } from "../../globalStyle";
 
 const StyledButton = styled.button`
-  display: flex;
-  justify-content: ${({ justifyContent }) => justifyContent || "center"};
+  background-color: var(--app-color-primary);
+  display: inline-flex;
+  justify-content: center;
   align-items: center;
   border: none;
-  border-radius: 8px;
-  background-color: transparent;
-  padding: 8px;
-  font-family: inherit;
-  font-size: inherit;
-  & > * {
-    flex-shrink: 0;
-  }
-  ${fullWidthable};
-  ${clickable}
-`;
-
-const ButtonLink = styled(Link)`
+  border-radius: 4em;
+  padding: 0.5em;
   text-decoration: none;
-  ${fullWidthable};
+  color: white;
+  user-select: none;
+  text-transform: uppercase;
+  ${sizeable}
+  ${clickable}
+  ${elevatable}
 `;
 
 export default function Button(props) {
-  const { link, to, ...buttonProps } = props;
-
-  const [ConditionalLink, linkProps] = useConditionalWrapper({
-    condition: link,
-    wrapper: ButtonLink,
-    wrapperProps: { to, $fullWidth: buttonProps.$fullWidth },
-  });
-
-  return (
-    <ConditionalLink {...linkProps}>
-      <StyledButton {...buttonProps} />
-    </ConditionalLink>
-  );
+  return <StyledButton {...props} />;
 }
-
-Button.propTypes = {
-  link: PropTypes.bool,
-  justifyContent: PropTypes.oneOf(["start", "center", "end"]),
-};

@@ -1,14 +1,17 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import ListItem from "./ListItem";
+import { sizeable } from "../../globalStyle";
 
 const StyledList = styled.ul`
-  list-style-type: none;
-  padding: 8px;
-  text-align: ${(props) => props.textAlign};
-  & > li {
-    margin-bottom: ${(props) => (props.vGap ? `${props.vGap}px` : 0)};
+  &[role="menu"] {
+    list-style-type: none;
   }
+  padding: 8px;
+  & > li {
+    margin-bottom: ${(props) => (props.vGap ? `${props.vGap * 4}px` : 0)};
+  }
+  ${sizeable}
 `;
 
 export default function List(props) {
@@ -18,5 +21,4 @@ export default function List(props) {
 StyledList.propTypes = {
   vGap: PropTypes.number,
   children: PropTypes.arrayOf(ListItem),
-  textAlign: PropTypes.oneOf(["left", "center", "right"]),
 };

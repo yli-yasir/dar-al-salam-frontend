@@ -1,17 +1,13 @@
 import styled from "styled-components";
-import { breakpoints } from "../../globalStyle";
 
 const Root = styled.div`
-  @media ${breakpoints.appBarShown(true)} {
-    margin-top: var(--app-bar-height);
-  }
-  @media ${breakpoints.permanentSideBar(true)} {
-    margin-left: var(--side-bar-width);
-  }
-  padding: 32px;
-  & > * {
-    margin-bottom: 32px;
-  }
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
 `;
 export default function Page(props) {
   return <Root {...props}></Root>;

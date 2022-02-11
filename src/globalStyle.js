@@ -4,25 +4,24 @@ export const appColorPrimary = "#CAE9FF";
 export const appColorSecondary = "#1B4965";
 
 const globalStyle = createGlobalStyle`
-    :root{
-        --app-bar-height: 50px;
-        --side-bar-width:200px;
-        --app-color-primary: ${appColorPrimary};
-        --app-color-secondary:${appColorSecondary}; 
-    }
-    body{
-        font-family:'Roboto Mono', monospace;
-    }
-
-    p {
-      margin: 16px;
-    }
-    ul{
-      margin:0;
-    }
-    svg {
-      margin:8px;
-    }
+ :root{
+     --app-bar-height: 50px;
+     --side-bar-width:200px;
+     --app-color-primary: #1BEEEE;
+     --app-color-secondary:#1B4965;
+}
+ *, *::before, *::after {
+     box-sizing: border-box;
+}
+ input, button, textarea, select {
+     font: inherit;
+}
+ body{
+     font-family:'Permanent Marker', cursive;;
+}
+ svg {
+     margin:1em;
+}
 `;
 
 export default globalStyle;
@@ -39,16 +38,31 @@ export const breakpoints = {
   down(size) {
     return `(max-width: ${this[size]})`;
   },
-  smallScreen(bool) {
-    return bool ? this.down("md") : this.up("md");
-  },
-  appBarShown(bool) {
-    return this.smallScreen(bool);
-  },
-  permanentSideBar(bool) {
-    return this.appBarShown(!bool);
-  },
 };
+
+const withFallback = (value, fallbackValue = "initial") =>
+  value || fallbackValue;
+
+// See: https://styled-components.com/docs/api#transient-props
+
+export const elevatable = css`
+  box-shadow: ${({ $elevation }) =>
+    $elevation
+      ? `${$elevation}px ${$elevation}px 16px 0 rgba(0,0,0,0.3) `
+      : "initial"};
+`;
+
+export const sizeable = css`
+  ${({ $width, $maxWidth, $minWidth, $height, $minHeight, $maxHeight }) =>
+    `
+  width: ${withFallback($width)};
+  max-width: ${withFallback($maxWidth)};
+  min-width: ${withFallback($minWidth)};
+  height: ${withFallback($height)};
+  max-height: ${withFallback($maxHeight)};
+  min-height: ${withFallback($minHeight)};
+  `}
+`;
 
 export const clickable = css`
   cursor: pointer;
@@ -58,15 +72,4 @@ export const clickable = css`
   &:active {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0 100%);
   }
-`;
-
-export const fullWidthable = css`
-  width: ${({ $fullWidth }) => ($fullWidth ? "100%" : "initial")};
-`;
-
-export const elevatable = css`
-  box-shadow: ${({ $elevation }) =>
-    $elevation
-      ? `${$elevation}px ${$elevation}px 16px 0 rgba(0,0,0,0.3) `
-      : "initial"};
 `;

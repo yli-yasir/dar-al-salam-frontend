@@ -1,5 +1,6 @@
 import Button from "./index";
 import { FiAirplay } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export default {
   component: Button,
@@ -21,8 +22,8 @@ Primary.args = {
 export const LinkButton = template.bind({});
 
 LinkButton.args = {
-  link: true,
-  to: "https://www.google.com",
+  as: Link,
+  $height: "100px",
   children: (
     <>
       <FiAirplay /> Go Back

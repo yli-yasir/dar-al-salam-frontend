@@ -1,5 +1,14 @@
 import eye from "../../assets/eye.svg";
+import styled from "styled-components";
+import { sizeable } from "../../globalStyle";
+
+const StyledLogo = styled.img.attrs(() => ({
+  alt: "logo",
+  src: eye,
+}))`
+  ${sizeable}
+`;
 
 export default function Logo(props) {
-  return <img alt="logo" height="40px" width="40px" src={eye} {...props} />;
+  return <StyledLogo {...props} />;
 }
