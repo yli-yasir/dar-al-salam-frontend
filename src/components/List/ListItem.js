@@ -1,7 +1,12 @@
 import styled from "styled-components";
+import { motion } from "framer-motion/dist/framer-motion";
 
-const StyledListItem = styled.li``;
+const StyledListItem = styled(motion.li)``;
 
 export default function ListItem(props) {
-  return <StyledListItem {...props} />;
+  const variants = {
+    hidden: { x: -100, opacity: 0 },
+    shown: { x: 0, opacity: 1 },
+  };
+  return <StyledListItem {...props} variants={variants} />;
 }

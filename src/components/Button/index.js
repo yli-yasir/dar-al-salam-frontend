@@ -8,7 +8,7 @@ const StyledButton = styled.button`
   align-items: center;
   border: none;
   border-radius: 4em;
-  padding: 0.5em;
+  padding: 1em;
   text-decoration: none;
   color: white;
   user-select: none;
