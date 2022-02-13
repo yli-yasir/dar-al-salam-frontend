@@ -10,7 +10,6 @@ const StyledButton = styled.button`
   border-radius: 4em;
   padding: 1em;
   text-decoration: none;
-  color: white;
   user-select: none;
   text-transform: uppercase;
   ${sizeable}

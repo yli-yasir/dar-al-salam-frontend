@@ -1,11 +1,12 @@
-import eye from "../../assets/eye.svg";
+import logoSrc from "../../assets/logo.png";
+
 import styled from "styled-components";
 import { sizeable } from "../../globalStyle";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 
 const StyledLogo = styled(motion.img).attrs(() => ({
   alt: "logo",
-  src: eye,
+  src: logoSrc,
 }))`
   ${sizeable}
 `;
@@ -14,7 +15,7 @@ export default function Logo({ animated, ...props }) {
   const motionProps = animated
     ? {
         animate: { rotate: 360 },
-        transition: { repeat: Infinity, duration: 2 },
+        transition: { repeat: Infinity, duration: 10 },
       }
     : {};
   return <StyledLogo {...props} {...motionProps} />;

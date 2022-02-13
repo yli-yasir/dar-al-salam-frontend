@@ -2,7 +2,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import ListItem from "./ListItem";
 import { sizeable } from "../../globalStyle";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 
 const StyledList = styled(motion.ul)`
   &[role="menu"] {

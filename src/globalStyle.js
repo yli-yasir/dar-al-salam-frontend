@@ -5,10 +5,8 @@ export const appColorSecondary = "#1B4965";
 
 const globalStyle = createGlobalStyle`
  :root{
-     --app-bar-height: 50px;
-     --side-bar-width:200px;
-     --app-color-primary: #1BEEEE;
-     --app-color-secondary:#1B4965;
+     --app-color-primary: #D1EFF2;
+     --app-color-secondary:#1BEEEE;
 }
  *, *::before, *::after {
      box-sizing: border-box;
@@ -17,10 +15,10 @@ const globalStyle = createGlobalStyle`
      font: inherit;
 }
  body{
-     font-family:'Permanent Marker', cursive;;
-}
- svg {
-     margin:1em;
+     min-height: 100vh;
+     font-size: 1.5rem;
+     line-height: 1.5;
+     background-color: var(--app-color-secondary);
 }
 `;
 
@@ -45,13 +43,6 @@ const withFallback = (value, fallbackValue = "initial") =>
 
 // See: https://styled-components.com/docs/api#transient-props
 
-export const elevatable = css`
-  box-shadow: ${({ $elevation }) =>
-    $elevation
-      ? `${$elevation}px ${$elevation}px 16px 0 rgba(0,0,0,0.3) `
-      : "initial"};
-`;
-
 export const sizeable = css`
   ${({ $width, $maxWidth, $minWidth, $height, $minHeight, $maxHeight }) =>
     `
@@ -62,6 +53,13 @@ export const sizeable = css`
   max-height: ${withFallback($maxHeight)};
   min-height: ${withFallback($minHeight)};
   `}
+`;
+
+export const elevatable = css`
+  box-shadow: ${({ $elevation }) =>
+    $elevation
+      ? `${$elevation}px ${$elevation}px 16px 0 rgba(0,0,0,0.3) `
+      : "initial"};
 `;
 
 export const clickable = css`
