@@ -13,6 +13,6 @@ export const languages = {
   },
 };
 
-const LanguageContext = React.createContext(languages.ar);
+const LanguageContext = React.createContext([languages.ar, () => {}]);
 
 export default LanguageContext;
