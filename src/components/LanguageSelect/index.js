@@ -9,7 +9,7 @@ import LanguageContext, { languages } from "../../languageContext";
 
 const Root = styled(motion.div)`
   background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
+  border-radius: 16px;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;

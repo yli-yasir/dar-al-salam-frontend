@@ -7,6 +7,7 @@ const globalStyle = createGlobalStyle`
  :root{
      --app-color-primary: #D1EFF2;
      --app-color-secondary:#1BEEEE;
+     
 }
  *, *::before, *::after {
      box-sizing: border-box;
@@ -18,7 +19,7 @@ const globalStyle = createGlobalStyle`
      min-height: 100vh;
      font-size: 1.5rem;
      line-height: 1.5;
-     background-color: var(--app-color-secondary);
+     background: linear-gradient(to top,var(--app-color-secondary),var(--app-color-primary),white) ;
 }
 `;
 

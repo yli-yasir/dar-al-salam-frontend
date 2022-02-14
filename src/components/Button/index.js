@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { sizeable, clickable, elevatable } from "../../globalStyle";
 
 const StyledButton = styled.button`
-  background-color: var(--app-color-primary);
+  background-color: var(--app-color-secondary);
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -12,6 +12,7 @@ const StyledButton = styled.button`
   text-decoration: none;
   user-select: none;
   text-transform: uppercase;
+  color: white;
   ${sizeable}
   ${clickable}
   ${elevatable}
