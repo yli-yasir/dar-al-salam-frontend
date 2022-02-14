@@ -1,8 +1,6 @@
 import styled from "styled-components";
-import IconButton from "../IconButton";
-import Flags from "country-flag-icons/react/3x2";
-import LanguageContext, { languages } from "../../languageContext";
-import { useContext } from "react";
+
+import LanguageSelect from "../LanguageSelect";
 
 const Root = styled.div`
   margin: 0 auto;
@@ -15,22 +13,16 @@ const Root = styled.div`
   position: relative;
 `;
 
-const LanguageButton = styled(IconButton)`
+const StyledLanguageSelect = styled(LanguageSelect)`
   top: 0;
   right: 0;
   position: absolute;
-  background-color: transparent;
-  & > svg {
-    height: 32px;
-  }
 `;
+
 export default function Page({ children, ...props }) {
-  const [, setLanguage] = useContext(LanguageContext);
   return (
     <Root {...props}>
-      <LanguageButton onClick={() => setLanguage(languages.en)}>
-        <Flags.IQ />
-      </LanguageButton>
+      <StyledLanguageSelect />
       {children}
     </Root>
   );

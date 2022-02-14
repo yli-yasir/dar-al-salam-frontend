@@ -13,13 +13,6 @@ const Root = styled(motion.div)`
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 75px;
-  & svg {
-    border-radius: 50%;
-    width: 32px;
-  }
-  cursor: pointer;
 `;
 
 const StyledList = styled(List)`
@@ -32,7 +25,13 @@ const StyledList = styled(List)`
 `;
 
 const StyledIconButton = styled(IconButton)`
-  padding: 8px;
+  padding: 0px;
+  width: 75px;
+  height: 75px;
+  & svg {
+    border-radius: 50%;
+    width: 50%;
+  }
 `;
 
 const countries = [
@@ -40,18 +39,16 @@ const countries = [
   { icon: <Flags.GB />, langKey: languages.en.langKey },
 ];
 
-export default function LanguageSelect() {
+export default function LanguageSelect({ className }) {
   const [open, setOpen] = useState(false);
 
   const [, setLanguage] = useContext(LanguageContext);
 
-  console.log(countries);
   return (
-    <Root layout>
+    <Root layout className={className}>
       <StyledIconButton onClick={() => setOpen(!open)}>🌎</StyledIconButton>
       {open && (
         <StyledList role="menu">
-          {" "}
           {countries.map(({ icon, langKey }) => (
             <ListItem key={langKey}>
               <StyledIconButton onClick={() => setLanguage(languages[langKey])}>
