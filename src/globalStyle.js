@@ -6,7 +6,8 @@ export const appColorSecondary = "#1B4965";
 const globalStyle = createGlobalStyle`
  :root{
      --app-color-primary: #D1EFF2;
-     --app-color-secondary:#1BEEEE;
+     --app-color-secondary:#4DD0E1
+;
      
 }
  *, *::before, *::after {
@@ -19,7 +20,8 @@ const globalStyle = createGlobalStyle`
      min-height: 100vh;
      font-size: 1.5rem;
      line-height: 1.5;
-     background: linear-gradient(to top,var(--app-color-secondary),var(--app-color-primary),white) ;
+     background: linear-gradient(to top,var(--app-color-secondary),var(--app-color-primary),#E0F7FA
+) ;
 }
 `;
 

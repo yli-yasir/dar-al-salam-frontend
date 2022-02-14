@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { sizeable, clickable, elevatable } from "../../globalStyle";
 
 const StyledButton = styled.button`
-  background-color: var(--app-color-secondary);
+  background: var(--app-color-secondary);
   display: inline-flex;
   justify-content: center;
   align-items: center;

@@ -15,6 +15,7 @@ const StyledLogo = styled(Logo)`
 
 const Title = styled(motion.h1)`
   text-align: center;
+  margin: 8px;
 `;
 
 const data = new Array(6).fill("hello");
