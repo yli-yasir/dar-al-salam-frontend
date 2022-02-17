@@ -20,8 +20,7 @@ const globalStyle = createGlobalStyle`
      min-height: 100vh;
      font-size: 1.5rem;
      line-height: 1.5;
-     background: linear-gradient(to top,var(--app-color-secondary),var(--app-color-primary),#E0F7FA
-) ;
+     background: linear-gradient(to top,var(--app-color-secondary),var(--app-color-primary),#E0F7FA) ;
 }
 `;
 

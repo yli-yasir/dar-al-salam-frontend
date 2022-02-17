@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import LanguageSelect from "../LanguageSelect";
 
+// Todo use vars for language
+
 const Root = styled.div`
   margin: 0 auto;
   display: flex;
@@ -11,6 +13,10 @@ const Root = styled.div`
   width: 100%;
   max-width: 500px;
   position: relative;
+  font-family: ${(props) =>
+    props.lang === "en"
+      ? `'Permanent Marker', cursive`
+      : `'Lemonada', cursive`};
 `;
 
 const StyledLanguageSelect = styled(LanguageSelect)`

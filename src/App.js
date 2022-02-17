@@ -1,16 +1,12 @@
 import GlobalStyle from "./globalStyle";
-import { HashRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
+import Clinic from "./pages/Clinic";
 import LanguageContext, { languages } from "./languageContext";
 import { useState } from "react";
+import routePaths from "./routes";
 import styled from "styled-components";
-
-const AppContainer = styled.div`
-  font-family: ${(props) =>
-    props.lang === "en"
-      ? `'Permanent Marker', cursive`
-      : `'Lemonada', cursive`};
-`;
+import AppContainer from "./components/AppContainer";
 
 function App() {
   const [language, setLanguage] = useState(languages.ar);
@@ -20,7 +16,10 @@ function App() {
       <GlobalStyle />
       <AppContainer lang={language.langKey}>
         <Router>
-          <Route path="/" component={Home}></Route>
+          <Switch>
+            <Route path={routePaths.home} component={Home} exact />
+            <Route path={routePaths.clinic} component={Clinic} />
+          </Switch>
         </Router>
       </AppContainer>
     </LanguageContext.Provider>

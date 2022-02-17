@@ -10,7 +10,7 @@ const StyledList = styled(motion.ul)`
   }
   padding: 8px;
   & > li {
-    margin-bottom: ${(props) => (props.vGap ? `${props.vGap * 4}px` : 0)};
+    margin-bottom: ${({ $vGap }) => ($vGap ? `${$vGap * 4}px` : 0)};
   }
   ${sizeable}
 `;
@@ -37,6 +37,6 @@ export default function List(props) {
 }
 
 StyledList.propTypes = {
-  vGap: PropTypes.number,
+  $vGap: PropTypes.number,
   children: PropTypes.arrayOf(ListItem),
 };

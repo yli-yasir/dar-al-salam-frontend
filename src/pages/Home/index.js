@@ -6,7 +6,9 @@ import Logo from "../../components/Logo";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { useContext } from "react";
-import LanguageContext, { languages } from "../../languageContext";
+import LanguageContext from "../../languageContext";
+import routePaths from "../../routes";
+import { Link } from "react-router-dom";
 
 const StyledLogo = styled(Logo)`
   margin: 64px;
@@ -18,26 +20,29 @@ const Title = styled(motion.h1)`
   margin: 8px;
 `;
 
-const data = new Array(6).fill("hello");
+const menuItemData = [
+  { labelKey: "drAliClinic", linkTo: routePaths.drAli },
+  { labelKey: "drShamamClinic", linkTo: routePaths.drShamam },
+];
 
 export default function Home() {
   const [language] = useContext(LanguageContext);
 
   return (
-    <Page>
+    <>
       <StyledLogo animated />
       <Title animate={{ scale: [0, 1] }} transition={{ duration: 2 }}>
         {language["darAlSalam"]}
       </Title>
-      <List role="menu" vGap={4} $width="100%">
-        {data.map((el) => (
-          <ListItem key={el}>
-            <Button $width="100%" $elevation={2}>
-              {language[el]}
+      <List role="menu" $vGap={4} $width="100%">
+        {menuItemData.map(({ labelKey, linkTo }) => (
+          <ListItem key={labelKey}>
+            <Button as={Link} $width="100%" $elevation={2} to={linkTo}>
+              {language[labelKey]}
             </Button>
           </ListItem>
         ))}
       </List>
-    </Page>
+    </>
   );
 }
