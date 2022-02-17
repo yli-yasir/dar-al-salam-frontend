@@ -1,4 +1,4 @@
-import Page from "../../components/Page";
+import Page from "../../components/AppContainer";
 import Button from "../../components/Button";
 import List from "../../components/List";
 import ListItem from "../../components/List/ListItem";

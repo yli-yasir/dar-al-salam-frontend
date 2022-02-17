@@ -25,7 +25,7 @@ const StyledLanguageSelect = styled(LanguageSelect)`
   position: absolute;
 `;
 
-export default function Page({ children, ...props }) {
+export default function AppContainer({ children, ...props }) {
   return (
     <Root {...props}>
       <StyledLanguageSelect />

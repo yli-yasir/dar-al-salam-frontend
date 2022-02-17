@@ -5,7 +5,6 @@ import Clinic from "./pages/Clinic";
 import LanguageContext, { languages } from "./languageContext";
 import { useState } from "react";
 import routePaths from "./routes";
-import styled from "styled-components";
 import AppContainer from "./components/AppContainer";
 
 function App() {
