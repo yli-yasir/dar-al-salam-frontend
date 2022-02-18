@@ -15,17 +15,18 @@ const StyledList = styled(motion.ul)`
   ${sizeable}
 `;
 
-export default function List(props) {
-  const variants = {
-    hidden: { opacity: 0 },
-    shown: {
-      opacity: 1,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.5,
-      },
+const variants = {
+  hidden: { opacity: 0 },
+  shown: {
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.5,
     },
-  };
+  },
+};
+
+export default function List(props) {
   return (
     <StyledList
       {...props}

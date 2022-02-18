@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { sizeable } from "../../globalStyle";
 
 const Root = styled.div`
+  ${sizeable}
   position: relative;
   min-height: 200px;
   max-width: 500px;
@@ -9,16 +11,18 @@ const Root = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  padding: 16px;
+  padding-top: 50px;
 `;
 
 const Splash = styled.div`
   position: absolute;
   background: linear-gradient(
-    var(--app-color-primary),
-    ${(props) => props.backgroundColor}
+    45deg,
+    ${(props) => props.backgroundColor} 80%,
+    var(--app-color-secondary),
+    var(--app-color-primary)
   );
-  clip-path: ellipse(40% 50% at bottom);
+  clip-path: ellipse(40% 60% at 50% 90%);
   top: 0;
   left: 0;
   right: 0;
@@ -38,15 +42,27 @@ const StyledCard = styled(motion.div)`
   border-radius: 16px;
 `;
 
-export default function Card(props) {
+const variants = {
+  hidden: {
+    y: 300,
+  },
+  shown: {
+    y: 50,
+    rotate: -10,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 1,
+    },
+  },
+};
+
+export default function Card({ splashColor, children, $width }) {
   return (
-    <Root>
-      <Splash backgroundColor={props.splashColor} />
-      <StyledCard
-        animate={{ rotate: -15, y: [300, 10] }}
-        transition={{ type: "spring" }}
-      >
-        Hello world
+    <Root $width={$width}>
+      <Splash backgroundColor={splashColor || "pink"} />
+      <StyledCard variants={variants} initial="hidden" animate="shown">
+        {children}
       </StyledCard>
     </Root>
   );

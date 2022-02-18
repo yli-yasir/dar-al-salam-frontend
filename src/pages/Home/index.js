@@ -1,4 +1,3 @@
-import Page from "../../components/AppContainer";
 import Button from "../../components/Button";
 import List from "../../components/List";
 import ListItem from "../../components/List/ListItem";
@@ -8,6 +7,7 @@ import styled from "styled-components";
 import { useContext } from "react";
 import LanguageContext from "../../languageContext";
 import routePaths from "../../routes";
+import { DR_SHAMAM, DR_ALI } from "../../clinicNames";
 import { Link } from "react-router-dom";
 
 const StyledLogo = styled(Logo)`
@@ -21,8 +21,8 @@ const Title = styled(motion.h1)`
 `;
 
 const menuItemData = [
-  { labelKey: "drAliClinic", linkTo: routePaths.drAli },
-  { labelKey: "drShamamClinic", linkTo: routePaths.drShamam },
+  { labelKey: "drAliClinic", linkTo: routePaths[DR_ALI] },
+  { labelKey: "drShamamClinic", linkTo: routePaths[DR_SHAMAM] },
 ];
 
 export default function Home() {

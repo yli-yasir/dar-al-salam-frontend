@@ -1,12 +1,12 @@
-export const clinicNames = {
-  drAli: "drAli",
-  drShamam: "drShamam",
-};
+import { DR_SHAMAM, DR_ALI } from "./clinicNames";
+
+const makeClinicRoute = (clinicName = ":clinicName") => `/clinic/${clinicName}`;
+
 const routes = {
   home: "/",
-  clinic: "/clinic/:clinicName",
-  drAli: `/clinic/${clinicNames.drAli}`,
-  drShamam: `/clinic/${clinicNames.drShamam}`,
+  clinic: makeClinicRoute(),
+  [DR_SHAMAM]: makeClinicRoute(DR_SHAMAM),
+  [DR_ALI]: makeClinicRoute(DR_ALI),
 };
 
 export default routes;
