@@ -11,7 +11,6 @@ const Root = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 500px;
   position: relative;
   font-family: ${(props) =>
     props.lang === "en"

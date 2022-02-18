@@ -5,8 +5,26 @@ const clinicInfo = {
     phoneNumber: "0543342",
     services: [
       {
-        title: "lazik",
-        description: "lazik eye surgery",
+        title: "lasik",
+        description: "lasik eye surgery",
+        image:
+          "https://diamondvision.com/wp-content/uploads/lasik-consumer-reports.jpg",
+      },
+      {
+        title: "lasik",
+        description: "lasik eye surgery",
+        image:
+          "https://diamondvision.com/wp-content/uploads/lasik-consumer-reports.jpg",
+      },
+      {
+        title: "lasik",
+        description: "lasik eye surgery",
+        image:
+          "https://diamondvision.com/wp-content/uploads/lasik-consumer-reports.jpg",
+      },
+      {
+        title: "lasik",
+        description: "lasik eye surgery",
         image:
           "https://diamondvision.com/wp-content/uploads/lasik-consumer-reports.jpg",
       },

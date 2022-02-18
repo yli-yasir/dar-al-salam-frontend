@@ -10,6 +10,14 @@ import routePaths from "../../routes";
 import { DR_SHAMAM, DR_ALI } from "../../clinicNames";
 import { Link } from "react-router-dom";
 
+const Root = styled.div`
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
 const StyledLogo = styled(Logo)`
   margin: 64px;
   width: 40%;
@@ -29,7 +37,7 @@ export default function Home() {
   const [language] = useContext(LanguageContext);
 
   return (
-    <>
+    <Root>
       <StyledLogo animated />
       <Title animate={{ scale: [0, 1] }} transition={{ duration: 2 }}>
         {language["darAlSalam"]}
@@ -43,6 +51,6 @@ export default function Home() {
           </ListItem>
         ))}
       </List>
-    </>
+    </Root>
   );
 }

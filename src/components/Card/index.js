@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { sizeable } from "../../globalStyle";
+import { sizeable, elevatable } from "../../globalStyle";
 
 const Root = styled.div`
   ${sizeable}
@@ -31,6 +31,7 @@ const Splash = styled.div`
 `;
 
 const StyledCard = styled(motion.div)`
+  ${elevatable}
   background-color: white;
   width: 50%;
   height: 300px;
@@ -47,12 +48,12 @@ const variants = {
     y: 300,
   },
   shown: {
-    y: 50,
+    y: 10,
     rotate: -10,
     transition: {
       type: "spring",
       bounce: 0.4,
-      duration: 1,
+      duration: 3,
     },
   },
 };
@@ -61,7 +62,12 @@ export default function Card({ splashColor, children, $width }) {
   return (
     <Root $width={$width}>
       <Splash backgroundColor={splashColor || "pink"} />
-      <StyledCard variants={variants} initial="hidden" animate="shown">
+      <StyledCard
+        variants={variants}
+        initial="hidden"
+        animate="shown"
+        $elevation={3}
+      >
         {children}
       </StyledCard>
     </Root>
