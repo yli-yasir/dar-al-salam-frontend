@@ -13,6 +13,8 @@ export const languages = {
     addressDescription: "mansour....",
     about: "About Us",
     aboutDetails: "The center was founded in...",
+    facebook: "facebook",
+    phoneNumber: "Phone Number",
   },
   ar: {
     langKey: "ar",
@@ -26,6 +28,8 @@ export const languages = {
     addressDescription: "المنصور...",
     about: "معلومات عنا",
     aboutDetails: "تم تاسيس المركز في سنة...",
+    facebook: "فيسبوك",
+    phoneNumber: "رقم الهاتف",
   },
 };
 

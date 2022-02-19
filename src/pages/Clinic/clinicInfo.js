@@ -4,6 +4,7 @@ const clinicInfo = {
   [DR_ALI]: {
     clinicTitleLanguageKey: "drAliClinic",
     phoneNumber: "0543342",
+    facebook: "fasdfs",
     services: [
       {
         title: "lasik",

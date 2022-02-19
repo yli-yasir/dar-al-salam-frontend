@@ -32,8 +32,8 @@ const StyledCard = styled(motion.div)`
   z-index: 1;
   display: flex;
   flex-direction: column;
+  padding: 0.2em;
   align-items: center;
-  padding: 1em;
   border-radius: 16px;
   max-width: 300px;
 `;

@@ -57,6 +57,7 @@ export const sizeable = css`
   `}
 `;
 
+// TODO try to get rid of transient props, they break inheritance, and you would have to add the mixin again if you inherit styles
 export const elevatable = css`
   box-shadow: ${({ $elevation }) =>
     $elevation

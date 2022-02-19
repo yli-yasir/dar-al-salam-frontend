@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { sizeable, clickable, elevatable } from "../../globalStyle";
 
@@ -18,6 +19,7 @@ const StyledButton = styled.button`
   ${elevatable}
 `;
 
-export default function Button(props) {
-  return <StyledButton {...props} />;
+export default function Button({ link, to, ...props }) {
+  const linkProps = link && { as: Link, to };
+  return <StyledButton {...linkProps} {...props} />;
 }

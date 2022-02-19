@@ -14,11 +14,10 @@ const StyledLogo = styled(motion.img).attrs(() => ({
 `;
 
 export default function Logo({ animated, ...props }) {
-  const motionProps = animated
-    ? {
-        animate: { rotate: 360 },
-        transition: { repeat: Infinity, duration: 2 },
-      }
-    : {};
+  const motionProps = animated && {
+    animate: { rotate: 360 },
+    transition: { repeat: Infinity, duration: 2 },
+  };
+
   return <StyledLogo {...props} {...motionProps} />;
 }

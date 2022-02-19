@@ -35,7 +35,7 @@ export default function Home() {
       <List role="menu" $vGap={4} $width="100%">
         {menuItemData.map(({ labelKey, linkTo }) => (
           <ListItem key={labelKey}>
-            <Button as={Link} $width="100%" $elevation={2} to={linkTo}>
+            <Button link $width="100%" $elevation={2} to={linkTo}>
               {language[labelKey]}
             </Button>
           </ListItem>
