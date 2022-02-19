@@ -9,6 +9,8 @@ const StyledLogo = styled(motion.img).attrs(() => ({
   src: logoSrc,
 }))`
   ${sizeable}
+  max-width:200px;
+  margin-bottom: 64px;
 `;
 
 export default function Logo({ animated, ...props }) {

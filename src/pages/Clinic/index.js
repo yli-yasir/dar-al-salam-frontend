@@ -2,24 +2,27 @@ import { useParams } from "react-router-dom";
 import Card from "../../components/Card";
 import clinicInfo from "./clinicInfo";
 import ImageSection from "../../components/ImageSection";
-import styled from "styled-components";
+import Page from "../../components/Page";
+import { useContext } from "react";
+import LanguageContext from "../../languageContext";
 
-const Root = styled.div`
-  width: 100%;
-  max-width: 1400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 export default function Clinic() {
   const { clinicName } = useParams();
 
-  const { phoneNumber, services } = clinicInfo[clinicName];
+  const [language] = useContext(LanguageContext);
+  const { clinicTitleLanguageKey, phoneNumber, services } =
+    clinicInfo[clinicName];
 
   return (
-    <Root>
-      <p>hello</p>
-      <Card $width="100%">Hello world {phoneNumber}</Card>
+    <Page $width="100%" $maxWidth="1400px">
+      <h1>{language[clinicTitleLanguageKey]}</h1>
+      <Card
+        $width="100%"
+        $maxWidth="700px"
+        cover="https://www.myfreetextures.com/wp-content/uploads/2014/10/seamless-wood-background-1.jpg"
+      >
+        Hello world {phoneNumber}
+      </Card>
       {services.map(({ title, description, image }, index) => (
         <ImageSection
           key={title}
@@ -30,6 +33,6 @@ export default function Clinic() {
           {description}
         </ImageSection>
       ))}
-    </Root>
+    </Page>
   );
 }

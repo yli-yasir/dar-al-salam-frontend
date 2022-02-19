@@ -6,7 +6,6 @@ const Root = styled.div`
   ${sizeable}
   position: relative;
   min-height: 200px;
-  max-width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,18 +15,13 @@ const Root = styled.div`
 
 const Splash = styled.div`
   position: absolute;
-  background: linear-gradient(
-    45deg,
-    ${(props) => props.backgroundColor} 80%,
-    var(--app-color-secondary),
-    var(--app-color-primary)
-  );
-  clip-path: ellipse(40% 60% at 50% 90%);
-  top: 0;
+  clip-path: ellipse(50% 80% at bottom);
+  background: skyblue;
+  top: 20%;
   left: 0;
   right: 0;
-  bottom: 0;
   border-radius: 32px;
+  height: 100%;
 `;
 
 const StyledCard = styled(motion.div)`
@@ -41,6 +35,7 @@ const StyledCard = styled(motion.div)`
   align-items: center;
   padding: 1em;
   border-radius: 16px;
+  max-width: 300px;
 `;
 
 const variants = {
@@ -58,10 +53,10 @@ const variants = {
   },
 };
 
-export default function Card({ splashColor, children, $width }) {
+export default function Card({ cover, children, ...props }) {
   return (
-    <Root $width={$width}>
-      <Splash backgroundColor={splashColor || "pink"} />
+    <Root {...props}>
+      <Splash cover={cover || "skyblue"} />
       <StyledCard
         variants={variants}
         initial="hidden"

@@ -2,6 +2,7 @@ import { DR_ALI, DR_SHAMAM } from "../../clinicNames";
 
 const clinicInfo = {
   [DR_ALI]: {
+    clinicTitleLanguageKey: "drAliClinic",
     phoneNumber: "0543342",
     services: [
       {
