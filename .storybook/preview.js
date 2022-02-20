@@ -1,5 +1,6 @@
 import { HashRouter as Router } from "react-router-dom";
 import GlobalStyle from "../src/globalStyle";
+import LanguageContext from "../src/languageContext";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -15,9 +16,11 @@ export const decorators = [
   (Story) => (
     <>
       <GlobalStyle />
-      <Router>
-        <Story />
-      </Router>
+      <LanguageContext.Provider value={[]}>
+        <Router>
+          <Story />
+        </Router>
+      </LanguageContext.Provider>
     </>
   ),
 ];
