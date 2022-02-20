@@ -57,7 +57,8 @@ export default function ContentSection({ reverse, imgSrc, title, children }) {
         <Image
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 2 }}
+          viewport={{ once: true }}
           src={imgSrc}
         />
       </ImageContainer>
@@ -66,7 +67,8 @@ export default function ContentSection({ reverse, imgSrc, title, children }) {
           $elevation={4}
           initial={{ scale: 0.1 }}
           whileInView={{ scale: 1 }}
-          transition={{ type: "spring", bounce: "0.4" }}
+          transition={{ type: "spring", bounce: "0.1", duration: 2 }}
+          viewport={{ once: true }}
         >
           <Title>{title}</Title>
           <p>{children}</p>

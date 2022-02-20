@@ -1,13 +1,26 @@
 import { createGlobalStyle, css } from "styled-components";
 
-export const appColorPrimary = "#CAE9FF";
-export const appColorSecondary = "#1B4965";
+export const breakpoints = {
+  xs: "0px",
+  sm: "600px",
+  md: "960px",
+  lg: "1280px",
+  xl: "1920px",
+  up(size) {
+    return `(min-width: ${this[size]})`;
+  },
+  down(size) {
+    return `(max-width: ${this[size]})`;
+  },
+  isMobile() {
+    return this.down("sm");
+  },
+};
 
 const globalStyle = createGlobalStyle`
  :root{
      --app-color-primary: #D1EFF2;
-     --app-color-secondary:#4DD0E1
-;
+     --app-color-secondary:#4DD0E1;
      
 }
  *, *::before, *::after {
@@ -22,23 +35,17 @@ const globalStyle = createGlobalStyle`
      line-height: 1.5;
      background: linear-gradient(to top,var(--app-color-secondary),var(--app-color-primary),#E0F7FA) ;
 }
+  h1, h2, h3{
+    text-align: center;
+  }
+  @media ${breakpoints.isMobile()} {
+    h1 {
+      font-size: 32px;
+    }
+  }
 `;
 
 export default globalStyle;
-
-export const breakpoints = {
-  xs: "0px",
-  sm: "600px",
-  md: "960px",
-  lg: "1280px",
-  xl: "1920px",
-  up(size) {
-    return `(min-width: ${this[size]})`;
-  },
-  down(size) {
-    return `(max-width: ${this[size]})`;
-  },
-};
 
 const withFallback = (value, fallbackValue = "initial") =>
   value || fallbackValue;

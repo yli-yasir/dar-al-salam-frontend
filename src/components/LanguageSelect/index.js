@@ -13,6 +13,7 @@ const Root = styled(motion.div)`
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 100;
 `;
 
 const StyledList = styled(List)`

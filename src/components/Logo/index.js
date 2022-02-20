@@ -1,5 +1,5 @@
 import logoSrc from "../../assets/logo.png";
-
+import { breakpoints } from "../../globalStyle";
 import styled from "styled-components";
 import { sizeable } from "../../globalStyle";
 import { motion } from "framer-motion";
@@ -10,6 +10,9 @@ const StyledLogo = styled(motion.img).attrs(() => ({
 }))`
   ${sizeable}
   max-width:200px;
+  @media ${breakpoints.isMobile()} {
+    max-width: 150px;
+  }
   margin-bottom: 64px;
 `;
 
