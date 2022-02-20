@@ -1,38 +1,46 @@
-import doctorCards from "../../components/DoctorCard/doctorCardDetails";
-import Page from "../../components/Page";
-import DoctorCard from "../../components/DoctorCard";
+import Button from "../../components/Button";
+import List from "../../components/List";
+import ListItem from "../../components/List/ListItem";
+import Logo from "../../components/Logo";
+import { motion } from "framer-motion";
 import styled from "styled-components";
-import ImageSection from "../../components/ImageSection";
+import { useContext } from "react";
+import LanguageContext from "../../languageContext";
+import routePaths from "../../routes";
+import { DR_SHAMAM, DR_ALI } from "../../clinicNames";
+import { Link } from "react-router-dom";
+import Page from "../../components/Page";
 
-const CardsContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  & > * {
-    margin: 16px;
-  }
+const Title = styled(motion.h1)`
+  text-align: center;
+  margin: 8px;
 `;
 
+const menuItemData = [
+  { labelKey: "drAliClinic", linkTo: routePaths[DR_ALI] },
+  { labelKey: "drShamamClinic", linkTo: routePaths[DR_SHAMAM] },
+  { labelKey: "centerAddress", linkTo: routePaths.address },
+  { labelKey: "about", linkTo: routePaths.about },
+];
+
 export default function Home() {
+  const [language] = useContext(LanguageContext);
+
   return (
-    <Page>
-      <ImageSection
-        direction="left"
-        imgSrc="https://scx2.b-cdn.net/gfx/news/hires/2020/hospital.jpg"
-        title="Dar Al-Salam"
-      >
-        Consectetur mollis vehicula magnis mi vitae aliquet ligula eros a curae
-        a sit vel curabitur class nascetur cubilia ut consectetur tempor eget
-        torquent in ipsum.Hac a platea velit a interdum a vestibulum a et
-        ridiculus nisl eget sem a a a fermentum habitasse nullam metus suscipit
-        donec euismod vestibulum nisl suspendisse ut.
-      </ImageSection>
-      <CardsContainer>
-        {Object.values(doctorCards).map((doctorCard) => (
-          <DoctorCard $elevation={4} {...doctorCard} />
+    <Page $width="90%" $maxWidth="500px">
+      <Logo animated />
+      <Title animate={{ scale: [0, 1] }} transition={{ duration: 2 }}>
+        {language["darAlSalam"]}
+      </Title>
+      <List role="menu" $vGap={4} $width="100%">
+        {menuItemData.map(({ labelKey, linkTo }) => (
+          <ListItem key={labelKey}>
+            <Button link $width="100%" $elevation={2} to={linkTo}>
+              {language[labelKey]}
+            </Button>
+          </ListItem>
         ))}
-      </CardsContainer>
+      </List>
     </Page>
   );
 }

@@ -1,16 +1,18 @@
-import CenteringBlock from "../CenteringBlock";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-const StyledListItem = styled.li`
-  overflow-wrap: anywhere;
-`;
+const StyledListItem = styled(motion.li)``;
 
-const ListItemContents = styled(CenteringBlock)``;
+const variants = {
+  hidden: { x: -100, opacity: 0 },
+  shown: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+    },
+  },
+};
 export default function ListItem(props) {
-  const { children, contentWidth, ...rootProps } = props;
-  return (
-    <StyledListItem {...rootProps}>
-      <ListItemContents width={contentWidth}>{children}</ListItemContents>
-    </StyledListItem>
-  );
+  return <StyledListItem {...props} variants={variants} />;
 }

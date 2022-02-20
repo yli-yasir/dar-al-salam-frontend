@@ -1,22 +1,43 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import ListItem from "./ListItem";
+import { sizeable } from "../../globalStyle";
+import { motion } from "framer-motion";
 
-const StyledList = styled.ul`
-  list-style-type: none;
-  padding: 8px;
-  text-align: ${(props) => props.textAlign};
-  & > li {
-    margin-bottom: ${(props) => (props.vGap ? `${props.vGap}px` : 0)};
+const StyledList = styled(motion.ul)`
+  &[role="menu"] {
+    list-style-type: none;
   }
+  padding: 8px;
+  & > li {
+    margin-bottom: ${({ $vGap }) => ($vGap ? `${$vGap * 4}px` : 0)};
+  }
+  ${sizeable}
 `;
 
+const variants = {
+  hidden: { opacity: 0 },
+  shown: {
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.5,
+    },
+  },
+};
+
 export default function List(props) {
-  return <StyledList {...props} />;
+  return (
+    <StyledList
+      {...props}
+      variants={variants}
+      initial="hidden"
+      animate="shown"
+    />
+  );
 }
 
 StyledList.propTypes = {
-  vGap: PropTypes.number,
+  $vGap: PropTypes.number,
   children: PropTypes.arrayOf(ListItem),
-  textAlign: PropTypes.oneOf(["left", "center", "right"]),
 };
